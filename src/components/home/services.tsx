@@ -1,20 +1,9 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  chakra,
-  HStack,
-  Grid,
-  GridItem,
-  Icon,
-  Text,
-  VStack,
-  Button,
-  SimpleGrid
-} from '@chakra-ui/react'
+import { Box, Flex, Heading, Icon, Text, VStack, Button, SimpleGrid } from '@chakra-ui/react'
 import { FaRegHospital, FaAmbulance } from 'react-icons/fa'
 import { GiScubaTanks } from 'react-icons/gi'
 import { FiBook } from 'react-icons/fi'
+
+import SectionTitle from './section-title'
 
 const services = [
   {
@@ -46,11 +35,7 @@ const services = [
 const Services = () => {
   return (
     <Box as="section" mt={40}>
-      <HStack align="center" spacing={5} mb={6}>
-        <chakra.span w="full" h="1px" bgColor="gray.200" />
-        <Heading>Pelayanan</Heading>
-        <chakra.span w="full" h="1px" bgColor="gray.200" />
-      </HStack>
+      <SectionTitle>Pelayanan</SectionTitle>
 
       <SimpleGrid columns={[1, 2, 4]} gap={10}>
         {services.map(service => (
