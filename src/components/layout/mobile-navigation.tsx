@@ -1,5 +1,11 @@
 import { ArrowForwardIcon, HamburgerIcon } from '@chakra-ui/icons'
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  Box,
   Button,
   Drawer,
   DrawerBody,
@@ -33,10 +39,14 @@ const MobileNavigation = () => {
           <DrawerCloseButton />
           <DrawerHeader>Menu Utama</DrawerHeader>
           <DrawerBody>
-            <VStack align="start" spacing={10}>
+            <VStack align="start" spacing={7}>
               {navs.map(nav =>
                 nav.type === 'service' ? (
-                  ''
+                  nav.menu.map(menu => (
+                    <Link key={menu.href} href={menu.href}>
+                      <a>{menu.label}</a>
+                    </Link>
+                  ))
                 ) : (
                   <Link key={nav.href} href={nav.href}>
                     <a>{nav.label}</a>

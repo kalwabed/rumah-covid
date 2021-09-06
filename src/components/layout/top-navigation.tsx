@@ -51,7 +51,7 @@ const MenuNavLink = ({ href, label }) => (
   <MenuItem>
     <Link href={href}>
       <a>{label}</a>
-    </Link>{' '}
+    </Link>
   </MenuItem>
 )
 
