@@ -89,7 +89,7 @@ const TopNavigation = () => {
             </HStack>
           </a>
         </Link>
-        <HStack align="center" spacing={2} display={['none', 'flex']}>
+        <HStack align="center" spacing={2} display={['none', null, 'flex']}>
           {navs.map(nav =>
             nav.type === 'service' ? (
               <Menu key={nav.href} isLazy closeOnBlur closeOnSelect>
@@ -107,7 +107,7 @@ const TopNavigation = () => {
             )
           )}
         </HStack>
-        <Button zIndex={20} display={['none', 'inline-flex']} rightIcon={<ArrowForwardIcon />} colorScheme="gray">
+        <Button zIndex={20} display={['none', null, 'inline-flex']} rightIcon={<ArrowForwardIcon />} colorScheme="gray">
           Kontak Darurat
         </Button>
 

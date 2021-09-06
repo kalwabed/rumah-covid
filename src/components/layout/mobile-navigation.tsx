@@ -28,7 +28,7 @@ const MobileNavigation = () => {
     <>
       <IconButton
         zIndex={20}
-        display={['flex', 'none']}
+        display={['flex', null, 'none']}
         variant="outline"
         aria-label="open menu"
         icon={<HamburgerIcon />}

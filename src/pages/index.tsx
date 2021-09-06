@@ -1,12 +1,14 @@
 import { NextPage } from 'next'
 
-import { Box } from '@chakra-ui/react'
 import Hero from '@components/home/hero'
+import Page from '@components/layout/page'
+import Services from '@components/home/services'
 
 const HomePage: NextPage = () => (
-  <Box py={10}>
+  <Page py={10}>
     <Hero />
-  </Box>
+    <Services />
+  </Page>
 )
 
 export default HomePage
