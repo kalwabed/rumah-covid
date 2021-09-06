@@ -1,5 +1,16 @@
 import { ArrowForwardIcon, ChevronDownIcon } from '@chakra-ui/icons'
-import { Box, Button, Flex, HStack, Menu, MenuButton, MenuItem, MenuList, Text } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+  Image as ChakraImage
+} from '@chakra-ui/react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -58,12 +69,21 @@ const MenuNavLink = ({ href, label }) => (
 const TopNavigation = () => {
   return (
     <Box w="full">
-      <Flex maxW={['2xl', '6xl', '8xl']} w="full" mx="auto" justify="space-between" align="center" p={4}>
+      <Flex
+        maxW={{ sm: 'full', xl: '6xl', '2xl': '8xl' }}
+        w="full"
+        mx="auto"
+        justify="space-between"
+        align="center"
+        p={4}
+      >
         <Link href="/">
           <a>
             <HStack align="center">
-              <Image src={Logo} width={45} height={45} placeholder="blur" />
-              <Text fontWeight="bold" fontFamily="logo" fontSize="2xl">
+              <Box zIndex={40}>
+                <Image src={Logo} width={45} height={45} placeholder="blur" alt="Logo" />
+              </Box>
+              <Text zIndex={40} fontWeight="bold" fontFamily="logo" fontSize="2xl">
                 RumahCovid
               </Text>
             </HStack>
@@ -87,7 +107,7 @@ const TopNavigation = () => {
             )
           )}
         </HStack>
-        <Button display={['none', 'inline-flex']} rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline">
+        <Button zIndex={20} display={['none', 'inline-flex']} rightIcon={<ArrowForwardIcon />} colorScheme="gray">
           Kontak Darurat
         </Button>
 
