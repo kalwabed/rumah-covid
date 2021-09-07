@@ -20,7 +20,7 @@ const Hero = () => {
       <Flex w={['full', null, '50%']} align="center">
         <VStack align="start" spacing={10}>
           <Box pos="relative">
-            <Heading as="h1" zIndex={40} fontSize="6xl">
+            <Heading as="h1" zIndex={40} fontSize="6xl" fontWeight="extrabold">
               Informasi Faskes & Alkes untuk{' '}
               <chakra.span bgGradient="linear(to-l, #7928CA,#FF0080)" bgClip="text">
                 COVID-19

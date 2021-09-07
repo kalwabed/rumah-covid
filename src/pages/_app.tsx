@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;
           500;600;700;800;900&display=swap"
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&display=swap"
           rel="stylesheet"
         />
+        <title>Rumah Covid</title>
       </Head>
       <LayoutRoot>
         <Component {...pageProps} />
