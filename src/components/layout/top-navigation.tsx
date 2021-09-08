@@ -1,20 +1,8 @@
 import { ArrowForwardIcon, ChevronDownIcon } from '@chakra-ui/icons'
-import {
-  Box,
-  Button,
-  Flex,
-  HStack,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Text,
-  Image as ChakraImage
-} from '@chakra-ui/react'
+import { Box, Button, Flex, HStack, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
 import Link from 'next/link'
-import Image from 'next/image'
+import Logo from './logo'
 
-import Logo from '@components/assets/logo.png'
 import MobileNavigation from './mobile-navigation'
 
 export const navs = [
@@ -79,14 +67,7 @@ const TopNavigation = () => {
       >
         <Link href="/">
           <a>
-            <HStack align="center">
-              <Box zIndex={40}>
-                <Image src={Logo} width={45} height={45} placeholder="blur" alt="Logo" />
-              </Box>
-              <Text zIndex={40} fontWeight="bold" fontFamily="logo" fontSize="2xl">
-                RumahCovid
-              </Text>
-            </HStack>
+            <Logo />
           </a>
         </Link>
         <HStack align="center" spacing={2} display={['none', null, 'flex']}>
