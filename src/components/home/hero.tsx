@@ -22,7 +22,7 @@ const Hero = () => {
         <VStack align="start" spacing={10}>
           <Box pos="relative">
             <Heading as="h1" zIndex={40} fontSize="6xl" fontWeight="extrabold">
-              Informasi Faskes untuk{' '}
+              Sumber Informasi Faskes untuk{' '}
               <chakra.span bgGradient="linear(to-l, #7928CA,#FF0080)" bgClip="text">
                 COVID-19
               </chakra.span>
