@@ -1,12 +1,11 @@
-import { chakra, Heading, HStack } from '@chakra-ui/react'
+import { Heading, HStack, Text, VStack } from '@chakra-ui/react'
 
 const SectionTitle: React.FC = ({ children }) => {
   return (
-    <HStack align="center" spacing={5} mb={8}>
-      <chakra.span w="full" h="1px" bgColor="gray.200" />
+    <VStack align="center" spacing={4} mb={12}>
       <Heading>{children}</Heading>
-      <chakra.span w="full" h="1px" bgColor="gray.200" />
-    </HStack>
+      <Text color="gray.500">Lorem ipsum dolor sit amet consectetur adipisicing elit.</Text>
+    </VStack>
   )
 }
 
