@@ -1,10 +1,24 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import { Box, Flex, Heading, Icon, Text, VStack, Button, SimpleGrid } from '@chakra-ui/react'
+import {
+  Box,
+  GridItem,
+  Grid,
+  Flex,
+  Heading,
+  Icon,
+  Text,
+  VStack,
+  Button,
+  SimpleGrid,
+  Image as ChakraImage
+} from '@chakra-ui/react'
 import { FaRegHospital } from 'react-icons/fa'
 import { FiHome } from 'react-icons/fi'
 import { IoCallOutline } from 'react-icons/io5'
 
+import PageContent from '@components/layout/page-content'
 import SectionTitle from './section-title'
+import Image from 'next/image'
 
 const services = [
   {
@@ -26,17 +40,50 @@ const services = [
 
 const Services = () => {
   return (
-    <Box as="section" mt={40}>
-      <SectionTitle>Pelayanan</SectionTitle>
+    <PageContent isFullWidth mt={40} py={16} px={0}>
+      <Box
+        pos="absolute"
+        top={0}
+        left={0}
+        transform="auto"
+        skewY="-8deg"
+        h="full"
+        w="full"
+        bgColor="gray.700"
+        zIndex={-10}
+      />
+      <SimpleGrid columns={[1]} gap={10} py={48} maxW="8xl" w="full" mx="auto">
+        <Grid templateColumns="repeat(2,1fr)" justifyItems="end" alignItems="center" gap={10}>
+          <GridItem colSpan={1}>
+            <Image src="/service-rs.svg" alt="Rumah sakit" width={500} height={350} />
+          </GridItem>
 
-      <SimpleGrid columns={[1, 3]} gap={10}>
-        {services.map(service => (
+          <GridItem colSpan={1} justifySelf="center" w="50%">
+            <VStack align="start" spacing={6} mb={4}>
+              <Box bgColor="green.500" p={4} shadow="xl" rounded="full">
+                <Icon as={FaRegHospital} p={1} color="white" w={16} h={16} />
+              </Box>
+              <Heading as="h3" color="white" fontSize="3xl">
+                Rumah sakit
+              </Heading>
+            </VStack>
+            <VStack spacing={4} align="start">
+              <Text color="white">
+                Memprioritaskan faskes dengan standar nasional, dan didukung dengan teknologi terkini.
+              </Text>
+              <Button variant="unstyled" color="blue.400" rightIcon={<ArrowForwardIcon />}>
+                Telusuri rumah sakit
+              </Button>
+            </VStack>
+          </GridItem>
+        </Grid>
+
+        {/* {services.map(service => (
           <Flex
             key={service.name}
             flexDir="column"
             align="start"
             p={4}
-            bgGradient="linear(to-br, rgba(61,61,61,0.10968137254901966) 0%, rgba(255,255,255,1) 55%, rgba(162,244,213,0.25539565826330536) 100%)"
             rounded="xl"
           >
             <Flex align="start" flexDir="column">
@@ -56,9 +103,9 @@ const Services = () => {
               </Button>
             </Flex>
           </Flex>
-        ))}
+        ))} */}
       </SimpleGrid>
-    </Box>
+    </PageContent>
   )
 }
 

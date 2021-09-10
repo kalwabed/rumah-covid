@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 
+import PageContent from '@components/layout/page-content'
 import SectionTitle from './section-title'
 
 const news = [
@@ -40,7 +41,7 @@ const news = [
 
 const News = () => {
   return (
-    <Box as="section" mt={40}>
+    <PageContent mt={40}>
       <SectionTitle>Berita</SectionTitle>
 
       <SimpleGrid columns={[1, 1, 2]} gap={10}>
@@ -108,7 +109,7 @@ const News = () => {
           </VStack>
         </Box>
       </SimpleGrid>
-    </Box>
+    </PageContent>
   )
 }
 
