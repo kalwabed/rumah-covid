@@ -1,17 +1,5 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import {
-  Box,
-  GridItem,
-  Grid,
-  Flex,
-  Heading,
-  Icon,
-  Text,
-  VStack,
-  Button,
-  SimpleGrid,
-  Image as ChakraImage
-} from '@chakra-ui/react'
+import { Box, GridItem, Grid, Flex, Heading, Icon, Text, VStack, Button, SimpleGrid } from '@chakra-ui/react'
 import { FaRegHospital } from 'react-icons/fa'
 import { FiHome } from 'react-icons/fi'
 import { IoCallOutline } from 'react-icons/io5'

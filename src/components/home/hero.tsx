@@ -1,5 +1,6 @@
 import {
   Box,
+  HStack,
   Button,
   Flex,
   Heading,
@@ -34,16 +35,11 @@ const Hero = () => {
                 di kota anda.
               </Text>
             </Box>
-            <Box w={['full', '75%']}>
-              <InputGroup size="md">
-                <Input size="lg" pr="5rem" placeholder="Cari berdasarkan provinsi" />
-                <InputRightElement w="6rem" h="full">
-                  <Button leftIcon={<SearchIcon />} size="md" colorScheme="blue">
-                    Cari
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-            </Box>
+            <HStack spacing={4}>
+              <Button colorScheme="purple" size="lg">
+                Telusuri sekarang
+              </Button>
+            </HStack>
           </VStack>
         </Flex>
         <Box zIndex={20} display={['none', null, 'inline-block']}>
