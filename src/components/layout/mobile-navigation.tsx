@@ -1,11 +1,5 @@
 import { ArrowForwardIcon, HamburgerIcon } from '@chakra-ui/icons'
 import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
   Button,
   Drawer,
   DrawerBody,
@@ -19,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 
+import Logo from './logo'
 import { navs } from './top-navigation'
 
 const MobileNavigation = () => {
@@ -34,26 +29,20 @@ const MobileNavigation = () => {
         icon={<HamburgerIcon />}
         onClick={onOpen}
       />
-      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+      <Drawer size="full" isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Menu Utama</DrawerHeader>
+          <DrawerHeader>
+            <Logo />{' '}
+          </DrawerHeader>
           <DrawerBody>
-            <VStack align="start" spacing={7}>
-              {navs.map(nav =>
-                nav.type === 'service' ? (
-                  nav.menu.map(menu => (
-                    <Link key={menu.href} href={menu.href}>
-                      <a>{menu.label}</a>
-                    </Link>
-                  ))
-                ) : (
-                  <Link key={nav.href} href={nav.href}>
-                    <a>{nav.label}</a>
-                  </Link>
-                )
-              )}
+            <VStack fontSize="xl" align="start" spacing={8}>
+              {navs.map(nav => (
+                <Link key={nav.href} href={nav.href}>
+                  <a>{nav.label}</a>
+                </Link>
+              ))}
               <Button variant="outline" rightIcon={<ArrowForwardIcon />}>
                 Kontak Darurat
               </Button>
