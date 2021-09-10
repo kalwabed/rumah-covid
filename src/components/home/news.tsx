@@ -13,7 +13,7 @@ import {
 import Link from 'next/link'
 
 import PageContent from '@components/layout/page-content'
-import SectionTitle from './section-title'
+import SectionHeader from './section-header'
 
 const news = [
   {
@@ -41,8 +41,8 @@ const news = [
 
 const News = () => {
   return (
-    <PageContent mt={40}>
-      <SectionTitle>Berita</SectionTitle>
+    <PageContent mt={64}>
+      <SectionHeader>Berita</SectionHeader>
 
       <SimpleGrid columns={[1, 1, 2]} gap={10}>
         {news.map((news, i) => (
