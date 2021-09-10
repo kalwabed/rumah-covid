@@ -42,7 +42,9 @@ const news = [
 const News = () => {
   return (
     <PageContent mt={64}>
-      <SectionHeader>Berita</SectionHeader>
+      <SectionHeader description="Menambah wawasan melalui artikel yang ditulis oleh para tenaga ahli di lapangan.">
+        Berita terkini
+      </SectionHeader>
 
       <SimpleGrid columns={[1, 1, 2]} gap={10}>
         {news.map((news, i) => (

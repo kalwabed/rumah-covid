@@ -11,7 +11,7 @@ import {
   VStack,
   chakra
 } from '@chakra-ui/react'
-import { SearchIcon } from '@chakra-ui/icons'
+import { ArrowRightIcon, SearchIcon } from '@chakra-ui/icons'
 import Image from 'next/image'
 
 import HeroImage from '@components/assets/hero-image.png'
@@ -22,21 +22,21 @@ const Hero = () => {
     <PageContent>
       <Flex justify="space-between">
         <Flex w={['full', null, '50%']} align="center">
-          <VStack align="start" spacing={10}>
-            <Box pos="relative">
-              <Heading as="h1" zIndex={40} fontSize="6xl" fontWeight="extrabold">
+          <VStack align={['center', 'start']} spacing={[10]}>
+            <Box pos="relative" textAlign={['center', 'start']}>
+              <Heading as="h1" zIndex={40} fontSize={['4xl', '6xl']} fontWeight="extrabold">
                 Sumber Informasi Faskes untuk{' '}
                 <chakra.span bgGradient="linear(to-l, #7928CA,#FF0080)" bgClip="text">
                   COVID-19
                 </chakra.span>
               </Heading>
-              <Text color="gray.500" fontSize="medium" mt={2}>
+              <Text color="gray.600" fontSize="xl" mt={[10, 6]}>
                 Kami membantu anda dalam mencari rumah sakit rujukan untuk perawatan, dan tempat isolasi mandiri pilihan
                 di kota anda.
               </Text>
             </Box>
             <HStack spacing={4}>
-              <Button colorScheme="purple" size="lg">
+              <Button colorScheme="purple" size="lg" rightIcon={<ArrowRightIcon />}>
                 Telusuri sekarang
               </Button>
             </HStack>
