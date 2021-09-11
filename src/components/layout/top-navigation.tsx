@@ -1,6 +1,7 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Box, Button, Flex, HStack } from '@chakra-ui/react'
 import Link from 'next/link'
+
 import Logo from './logo'
 
 import MobileNavigation from './mobile-navigation'
@@ -11,11 +12,11 @@ export const navs = [
     label: 'Beranda'
   },
   {
-    href: '/hospital',
+    href: '/provinces?kebutuhan=rumah%20sakit',
     label: 'Rumah sakit'
   },
   {
-    href: '/isoman',
+    href: '/provinces?kebutuhan=isoman',
     label: 'Isoman'
   }
 ]

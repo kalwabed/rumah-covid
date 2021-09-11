@@ -45,7 +45,7 @@ const Services = () => {
         skewY="-8deg"
         h="full"
         w="full"
-        bgColor="gray.700"
+        bgColor="gray.800"
         zIndex={-10}
       />
       <SimpleGrid columns={1} gap={[28, 48]} py={48} maxW="8xl" w="full" mx="auto">
