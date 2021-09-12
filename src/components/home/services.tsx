@@ -50,7 +50,14 @@ const Services = () => {
       />
       <SimpleGrid columns={1} gap={[28, 48]} py={48} maxW="8xl" w="full" mx="auto">
         {services.map(service => (
-          <Grid templateColumns={['none', 'repeat(2,1fr)']} justifyItems="end" alignItems="center" gap={10} py={8}>
+          <Grid
+            key={service.name}
+            templateColumns={['none', 'repeat(2,1fr)']}
+            justifyItems="end"
+            alignItems="center"
+            gap={10}
+            py={8}
+          >
             <GridItem colSpan={1} display={['none', 'grid']}>
               <Image src={service.image} alt={service.name} width={600} height={400} />
             </GridItem>
