@@ -2,6 +2,7 @@ import { Icon, SimpleGrid, Flex, LinkOverlay, Text, HStack, LinkBox } from '@cha
 import { FiClock } from 'react-icons/fi'
 import Link from 'next/link'
 
+import { encodeSlug } from '../../utils/slug-converter'
 import Container from '@components/layout/container'
 
 const ProvinceList = ({ provinces }) => {
@@ -38,7 +39,7 @@ const ProvinceList = ({ provinces }) => {
             <LinkBox>
               <Flex flexDir="column">
                 <HStack align="center" mb={[0, 2]}>
-                  <Link href="/provinces/jawa-timur" passHref>
+                  <Link href={`/provinces/${encodeSlug(province.name as string)}`} passHref>
                     <LinkOverlay
                       borderRight={['none', '1px solid gray']}
                       pr={3}

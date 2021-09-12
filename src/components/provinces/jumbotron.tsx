@@ -5,7 +5,9 @@ import Link from 'next/link'
 
 import Container from '@components/layout/container'
 
-const Jumbotron = () => {
+const Jumbotron = ({ province = '' }) => {
+  const title = decodeURI(province) ?? 'Provinsi'
+
   return (
     <Container isFullWidth bgColor="gray.800" bgImage="/topography.svg" color="white" w="full" pb={14} pt={6} px={0}>
       <Container>
@@ -22,17 +24,25 @@ const Jumbotron = () => {
 
               <BreadcrumbItem>
                 <Link href="/provinces" passHref>
-                  <BreadcrumbLink isCurrentPage>Provinsi</BreadcrumbLink>
+                  <BreadcrumbLink isCurrentPage={!province}>Provinsi</BreadcrumbLink>
                 </Link>
               </BreadcrumbItem>
+              {province && (
+                <BreadcrumbItem>
+                  <Link href={`/provinces/${province}`} passHref>
+                    <BreadcrumbLink isCurrentPage>{title}</BreadcrumbLink>
+                  </Link>
+                </BreadcrumbItem>
+              )}
             </Breadcrumb>
             <VStack spacing={4} align="start">
               <Heading as="h1" fontSize="5xl">
-                Provinsi
+                {title}
               </Heading>
               <Text w={['full', '60%']}>
-                Informasi seputar kontak fasilitas kesehatan di seluruh provinsi di Indonesia yang dikumpulkan relawan
-                melalui pencarian di internet atau media sosial.
+                Informasi seputar kontak fasilitas kesehatan di{' '}
+                {province ? `Provinsi ${title}` : 'seluruh provinsi di Indonesia'} yang dikumpulkan relawan melalui
+                pencarian di internet atau media sosial.
               </Text>
             </VStack>
           </Box>

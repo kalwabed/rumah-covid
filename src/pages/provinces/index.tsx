@@ -1,3 +1,4 @@
+import { NextPage } from 'next'
 import { ChangeEvent, useMemo, useState } from 'react'
 
 import Page from '@components/layout/page'
@@ -39,7 +40,7 @@ const provinces = [
   { name: 'Papua Barat', entry: 543 }
 ]
 
-const ProvincesPage = () => {
+const ProvincesPage: NextPage = () => {
   const [search, setSearch] = useState('')
 
   const filteredProvinces = useMemo(() => {
