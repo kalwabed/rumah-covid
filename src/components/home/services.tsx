@@ -5,7 +5,7 @@ import { FaRegHospital } from 'react-icons/fa'
 import { FiHome } from 'react-icons/fi'
 import { IoCallOutline } from 'react-icons/io5'
 
-import PageContent from '@components/layout/page-content'
+import Container from '@components/layout/container'
 
 const services = [
   {
@@ -36,7 +36,7 @@ const services = [
 
 const Services = () => {
   return (
-    <PageContent isFullWidth mt={40} py={16} px={[4, 0]}>
+    <Container isFullWidth mt={40} py={16} px={[4, 0]}>
       <Box
         pos="absolute"
         top={0}
@@ -83,7 +83,7 @@ const Services = () => {
           </Grid>
         ))}
       </SimpleGrid>
-    </PageContent>
+    </Container>
   )
 }
 

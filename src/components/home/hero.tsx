@@ -15,11 +15,11 @@ import { ArrowRightIcon, SearchIcon } from '@chakra-ui/icons'
 import Image from 'next/image'
 
 import HeroImage from '@components/assets/hero-image.png'
-import PageContent from '@components/layout/page-content'
+import Container from '@components/layout/container'
 
 const Hero = () => {
   return (
-    <PageContent>
+    <Container>
       <Flex justify="space-between">
         <Flex w={['full', null, '50%']} align="center">
           <VStack align={['center', 'start']} spacing={[10]}>
@@ -46,7 +46,7 @@ const Hero = () => {
           <Image src={HeroImage} alt="Hero image" placeholder="blur" />
         </Box>
       </Flex>
-    </PageContent>
+    </Container>
   )
 }
 

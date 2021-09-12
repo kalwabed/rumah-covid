@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 
-import PageContent from '@components/layout/page-content'
+import Container from '@components/layout/container'
 import SectionHeader from './section-header'
 
 const news = [
@@ -41,7 +41,7 @@ const news = [
 
 const News = () => {
   return (
-    <PageContent mt={64}>
+    <Container mt={64}>
       <SectionHeader description="Menambah wawasan melalui artikel yang ditulis oleh para tenaga ahli di lapangan.">
         Berita terkini
       </SectionHeader>
@@ -111,7 +111,7 @@ const News = () => {
           </VStack>
         </Box>
       </SimpleGrid>
-    </PageContent>
+    </Container>
   )
 }
 

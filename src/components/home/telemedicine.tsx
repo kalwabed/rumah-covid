@@ -2,11 +2,11 @@ import { Box, Flex, Heading, VStack, Text, Button } from '@chakra-ui/react'
 import Image from 'next/image'
 
 import TeleImg from '@components/assets/telemedicine.png'
-import PageContent from '@components/layout/page-content'
+import Container from '@components/layout/container'
 
 const Telemedicine = () => {
   return (
-    <PageContent mt={40}>
+    <Container mt={40}>
       <Flex
         pos="relative"
         align="center"
@@ -28,7 +28,7 @@ const Telemedicine = () => {
           <Button colorScheme="green">Cek sekarang</Button>
         </VStack>
       </Flex>
-    </PageContent>
+    </Container>
   )
 }
 

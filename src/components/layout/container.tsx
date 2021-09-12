@@ -4,7 +4,7 @@ interface PageContentProps extends BoxProps {
   isFullWidth?: boolean
 }
 
-const PageContent: React.FC<PageContentProps> = props => {
+const Container: React.FC<PageContentProps> = props => {
   return (
     <Box
       pos="relative"
@@ -20,4 +20,4 @@ const PageContent: React.FC<PageContentProps> = props => {
   )
 }
 
-export default PageContent
+export default Container
