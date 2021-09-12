@@ -1,21 +1,23 @@
-import {
-  Box,
-  FormControl,
-  Button,
-  RadioGroup,
-  Text,
-  Radio,
-  Select,
-  VStack,
-  HStack,
-  FormLabel,
-  Switch
-} from '@chakra-ui/react'
+import { Box, FormControl, Button, RadioGroup, Text, Radio, Select, HStack, FormLabel, Switch } from '@chakra-ui/react'
 import { FiTrash } from 'react-icons/fi'
 
 import { encodeSlug } from 'src/utils/slug-converter'
 
 const categories = ['Semua', 'Rumah sakit', 'Isoman']
+const cities = [
+  'Banyuwangi',
+  'Genteng',
+  'Batu',
+  'Jember',
+  'Blitar',
+  'Bondowoso',
+  'Situbondo',
+  'Jombang',
+  'Malang',
+  'Bangkalan',
+  'Mojokerto',
+  'Magetan'
+]
 
 const ControlBar = () => {
   return (
@@ -39,16 +41,19 @@ const ControlBar = () => {
 
       <FormControl id="cities" px={4} mt={4}>
         <FormLabel>Lokasi</FormLabel>
-        <Select placeholder="Pilih kota" value="option1">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+        <Select defaultValue="semua">
+          <option value="semua">Semua</option>
+          {cities.map(city => (
+            <option key={city} value={encodeSlug(city)}>
+              {city}
+            </option>
+          ))}
         </Select>
       </FormControl>
 
       <FormControl id="categories" px={4} mt={4}>
         <FormLabel>Kategori</FormLabel>
-        <Select placeholder="Pilih kategori" defaultValue="semua">
+        <Select defaultValue="semua">
           {categories.map(cat => (
             <option key={cat} value={encodeSlug(cat)}>
               {cat}

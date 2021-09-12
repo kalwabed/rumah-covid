@@ -1,12 +1,17 @@
+import { useMemo } from 'react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { SimpleGrid, VStack, Text, Box, Heading, Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import { FiHome } from 'react-icons/fi'
 import Link from 'next/link'
+import { useAtom } from 'jotai'
 
 import Container from '@components/layout/container'
+import { provincesState } from 'src/store'
 
 const Jumbotron = ({ province = '' }) => {
-  const title = decodeURI(province) ?? 'Provinsi'
+  const [provinces] = useAtom(provincesState)
+
+  const title = useMemo(() => provinces?.find(prov => prov.slug === province)?.name ?? 'Provinsi', [province])
 
   return (
     <Container isFullWidth bgColor="gray.800" bgImage="/topography.svg" color="white" w="full" pb={14} pt={6} px={0}>

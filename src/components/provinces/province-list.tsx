@@ -2,10 +2,10 @@ import { Icon, SimpleGrid, Flex, LinkOverlay, Text, HStack, LinkBox } from '@cha
 import { FiClock } from 'react-icons/fi'
 import Link from 'next/link'
 
-import { encodeSlug } from '../../utils/slug-converter'
 import Container from '@components/layout/container'
+import { Provinces } from 'src/store'
 
-const ProvinceList = ({ provinces }) => {
+const ProvinceList = ({ provinces }: { provinces: Provinces[] }) => {
   return (
     <Container mt={10}>
       <SimpleGrid columns={[2, 3]} gap={[5, 8]}>
@@ -39,7 +39,7 @@ const ProvinceList = ({ provinces }) => {
             <LinkBox>
               <Flex flexDir="column">
                 <HStack align="center" mb={[0, 2]}>
-                  <Link href={`/provinces/${encodeSlug(province.name as string)}`} passHref>
+                  <Link href={`/provinces/${province.slug}`} passHref>
                     <LinkOverlay
                       borderRight={['none', '1px solid gray']}
                       pr={3}
