@@ -84,3 +84,65 @@ export const hospitalsState = atom([
     address: 'Jl. Jend. Sudirman Kav. 49, Kecamatan Setiabudi, Kelurahan Karet Semanggi, Jakarta Selatan'
   }
 ])
+
+interface Item {
+  description: string
+  provider: string
+  phone: string
+  address: string
+  verified?: string
+  status?: 'Tersedia' | 'Tidak Tersedia'
+  category: string
+}
+
+export const itemsState = atom<Item[]>([
+  {
+    description: 'Ambulans siap tanggap',
+    provider: 'RS Al-huda Genteng',
+    phone: '081928928222',
+    address: 'Jl. Jend. Sudirman Kav. 49, Kecamatan Setiabudi, Kelurahan Karet Semanggi, Jakarta Selatan',
+    verified: 'Terverifikasi 28/07/2021',
+    status: 'Tersedia',
+    category: 'rumah sakit'
+  },
+  {
+    description: 'Ketersediaan tempat tidur',
+    provider: 'RSUPN Dr. Cipto Mangkunkusumo',
+    phone: '1500135',
+    address: 'Poliklinik Madya RSCM RW.5, Kenari, Senen, Central Jakarta City, Jakarta 10430',
+    verified: 'Terverifikasi 28/07/2021',
+    category: 'rumah sakit'
+  },
+  {
+    description: 'Rumah sakit rujukan covid-19',
+    provider: 'RS Islam Pondok Kopi',
+    phone: '0218093288',
+    address: 'Jl. Raya Pondok Kopi Jakarta Timur',
+    verified: 'Terverifikasi 28/07/2021',
+    status: 'Tidak Tersedia',
+    category: 'rumah sakit'
+  },
+  {
+    description: 'Rumah sakit rujukan covid-19',
+    provider: 'RS Umum Bhakti Mulia',
+    phone: '(021) 548 1625',
+    address: 'Jl. KS Tubun No. 79 Slipi Jakarta Barat',
+    status: 'Tersedia',
+    category: 'rumah sakit'
+  },
+  {
+    description: 'Rumah sakit rujukan covid-19',
+    provider: 'RSUP Fatmawati',
+    phone: '02175015247660552',
+    address: 'Jln. Rs. Fatmawati Raya No.4',
+    category: 'rumah sakit'
+  },
+  {
+    description: 'RS rujukan covid ibu hamil',
+    provider: 'RSUD Saiful Anwar',
+    phone: '081391917939',
+    address: 'Jl. Jaksa Agung Suprapto No.2, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65112',
+    verified: 'Terverifikasi 28/07/2021',
+    category: 'rumah sakit'
+  }
+])
