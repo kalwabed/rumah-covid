@@ -21,7 +21,16 @@ const cities = [
 
 const ControlBar = () => {
   return (
-    <Box as="aside" h="full" minW="316px" border="1px solid" borderColor="gray.300" rounded="sm" shadow="sm">
+    <Box
+      as="aside"
+      display={['none', 'block']}
+      h="full"
+      minW="316px"
+      border="1px solid"
+      borderColor="gray.300"
+      rounded="sm"
+      shadow="sm"
+    >
       <HStack py={2} px={4} justify="space-between" borderBottom="2px solid" borderBottomColor="gray.300" mb={4}>
         <Text fontWeight="semibold">Filter pencarian</Text>
         <Button leftIcon={<FiTrash />} variant="ghost" colorScheme="blue" size="sm">

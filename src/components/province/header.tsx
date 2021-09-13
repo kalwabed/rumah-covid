@@ -10,7 +10,7 @@ const ProvinceHeader = () => {
   return (
     <Container mt={8}>
       <HStack w="full" spacing={8}>
-        <Text fontWeight="bold" fontSize="2xl" w="50%" borderRight="1px solid #E2E8F0">
+        <Text fontWeight="bold" fontSize="2xl" minW="360px" borderRight="1px solid #E2E8F0">
           Menemukan 50 rumah sakit
         </Text>
         <SearchBar search={search} onChange={e => setSearch(e.target.value)} type="province" />
