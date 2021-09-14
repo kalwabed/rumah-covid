@@ -6,10 +6,11 @@ import Link from 'next/link'
 import { useAtom } from 'jotai'
 
 import Container from '@components/layout/container'
-import { provincesState } from 'src/store'
+import { provincesState, provinceState } from 'src/store'
 
-const Jumbotron = ({ province = '' }) => {
+const Jumbotron = () => {
   const [provinces] = useAtom(provincesState)
+  const [province] = useAtom(provinceState)
 
   const title = useMemo(() => provinces?.find(prov => prov.slug === province)?.name ?? 'Provinsi', [province])
 

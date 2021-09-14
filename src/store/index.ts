@@ -146,3 +146,5 @@ export const itemsState = atom<Item[]>([
     category: 'rumah sakit'
   }
 ])
+
+export const provinceState = atom<string>('')
