@@ -6,6 +6,8 @@ import { useRouter } from 'next/router'
 
 import Logo from './logo'
 import MobileNavigation from './mobile-navigation'
+import { useAtom } from 'jotai'
+import { pathState } from 'src/store'
 
 export const navs = [
   {
@@ -35,8 +37,12 @@ const NavLink = ({ href, label, colorScheme }) => (
 const TopNavigation = () => {
   const [isHeightOffset, setIsHeightOffset] = useState(false)
   const { asPath } = useRouter()
+  const [, setPath] = useAtom(pathState)
 
-  const isHomePage = useMemo(() => asPath === '/', [asPath])
+  const isHomePage = useMemo(() => {
+    setPath(asPath)
+    return asPath === '/'
+  }, [asPath])
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -88,7 +94,7 @@ const TopNavigation = () => {
           Kontak Darurat
         </Button>
 
-        <MobileNavigation />
+        <MobileNavigation isWhite={!isHeightOffset && !isHomePage} />
       </Flex>
     </Box>
   )

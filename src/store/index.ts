@@ -148,3 +148,5 @@ export const itemsState = atom<Item[]>([
 ])
 
 export const provinceState = atom<string>('')
+
+export const pathState = atom<string>('')

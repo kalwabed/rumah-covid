@@ -16,7 +16,7 @@ import Link from 'next/link'
 import Logo from './logo'
 import { navs } from './top-navigation'
 
-const MobileNavigation = () => {
+const MobileNavigation = ({ isWhite = false }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -24,8 +24,9 @@ const MobileNavigation = () => {
       <IconButton
         zIndex={20}
         display={['flex', null, 'none']}
-        variant="outline"
+        variant="ghost"
         aria-label="open menu"
+        color={isWhite ? 'white' : 'inherit'}
         icon={<HamburgerIcon />}
         onClick={onOpen}
       />

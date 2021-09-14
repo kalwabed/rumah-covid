@@ -164,7 +164,14 @@ export const MobileControlBarButton = () => {
         </ModalContent>
       </Modal>
       <Box p={4} pos="fixed" bottom={0} right={0}>
-        <IconButton aria-label="Filter provinces" size="lg" colorScheme="purple" icon={<HiFilter />} onClick={onOpen} />
+        <IconButton
+          aria-label="Filter provinces"
+          display={['inline-flex', 'none']}
+          size="lg"
+          colorScheme="purple"
+          icon={<HiFilter />}
+          onClick={onOpen}
+        />
       </Box>
     </>
   )
