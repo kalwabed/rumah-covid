@@ -7,7 +7,7 @@ const LayoutRoot: React.FC = ({ children }) => {
   return (
     <Flex flexDir="column" minH="full" pos="relative" overflow="hidden">
       <TopNavigation />
-      <Box as="main" flex="1 1 auto">
+      <Box as="main" flex="1 1 auto" mt={20}>
         {children}
       </Box>
       <Footer />

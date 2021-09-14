@@ -1,9 +1,10 @@
+import { useEffect, useMemo, useState } from 'react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Box, Button, Flex, HStack } from '@chakra-ui/react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import Logo from './logo'
-
 import MobileNavigation from './mobile-navigation'
 
 export const navs = [
@@ -21,10 +22,10 @@ export const navs = [
   }
 ]
 
-const NavLink = ({ href, label }) => (
+const NavLink = ({ href, label, colorScheme }) => (
   <Link href={href} passHref>
     <a>
-      <Button variant="ghost" fontWeight="medium">
+      <Button variant="ghost" fontWeight="medium" colorScheme={colorScheme}>
         {label}
       </Button>
     </a>
@@ -32,8 +33,34 @@ const NavLink = ({ href, label }) => (
 )
 
 const TopNavigation = () => {
+  const [isHeightOffset, setIsHeightOffset] = useState(false)
+  const { asPath } = useRouter()
+
+  const isHomePage = useMemo(() => asPath === '/', [asPath])
+
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        setIsHeightOffset(true)
+      } else {
+        setIsHeightOffset(false)
+      }
+    })
+    return document.removeEventListener('scroll', () => {})
+  }, [])
+
   return (
-    <Box w="full">
+    <Box
+      w="full"
+      pos="fixed"
+      top={0}
+      bgColor={isHeightOffset ? 'white' : isHomePage ? 'transparent' : 'gray.800'}
+      zIndex={42}
+      shadow={isHeightOffset ? 'md' : 'none'}
+      transition="ease-in-out"
+      transitionDuration="250ms"
+      transitionProperty="background-color"
+    >
       <Flex
         maxW={{ sm: 'full', xl: '6xl', '2xl': '8xl' }}
         w="full"
@@ -44,12 +71,17 @@ const TopNavigation = () => {
       >
         <Link href="/">
           <a>
-            <Logo />
+            <Logo isWhite={!isHeightOffset && !isHomePage} />
           </a>
         </Link>
         <HStack align="center" spacing={5} display={['none', null, 'flex']}>
           {navs.map(nav => (
-            <NavLink key={nav.href} href={nav.href} label={nav.label} />
+            <NavLink
+              key={nav.href}
+              colorScheme={isHeightOffset && isHomePage ? 'gray' : !isHeightOffset && !isHomePage && 'whiteAlpha'}
+              href={nav.href}
+              label={nav.label}
+            />
           ))}
         </HStack>
         <Button zIndex={20} display={['none', null, 'inline-flex']} rightIcon={<ArrowForwardIcon />} colorScheme="gray">
