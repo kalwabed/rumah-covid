@@ -1,5 +1,26 @@
-import { Box, FormControl, Button, RadioGroup, Text, Radio, Select, HStack, FormLabel, Switch } from '@chakra-ui/react'
+import {
+  Box,
+  IconButton,
+  FormControl,
+  Button,
+  RadioGroup,
+  Text,
+  Radio,
+  Select,
+  HStack,
+  Modal,
+  ModalHeader,
+  ModalOverlay,
+  ModalBody,
+  ModalFooter,
+  ModalContent,
+  ModalCloseButton,
+  FormLabel,
+  useDisclosure,
+  Switch
+} from '@chakra-ui/react'
 import { FiTrash } from 'react-icons/fi'
+import { HiFilter } from 'react-icons/hi'
 
 import { encodeSlug } from 'src/utils/slug-converter'
 
@@ -78,6 +99,74 @@ const ControlBar = () => {
         <Switch id="verification" />
       </FormControl>
     </Box>
+  )
+}
+
+export const MobileControlBarButton = () => {
+  const { onOpen, isOpen, onClose } = useDisclosure()
+
+  return (
+    <>
+      <Modal onClose={onClose} size="full" isOpen={isOpen} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader display="flex" alignItems="center">
+            <Button leftIcon={<FiTrash />} variant="ghost" colorScheme="blue" size="xs">
+              Reset
+            </Button>
+            <Text ml={10}>Filter pencarian</Text>
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <FormControl>
+              <FormLabel>Tampilkan berdasarkan</FormLabel>
+              <RadioGroup defaultValue="1">
+                <HStack spacing={4}>
+                  <Radio value="1">Paling Relevan</Radio>
+                  <Radio value="2">Paling baru</Radio>
+                </HStack>
+              </RadioGroup>
+            </FormControl>
+
+            <FormControl id="cities" mt={4}>
+              <FormLabel>Lokasi</FormLabel>
+              <Select defaultValue="semua">
+                <option value="semua">Semua</option>
+                {cities.map(city => (
+                  <option key={city} value={encodeSlug(city)}>
+                    {city}
+                  </option>
+                ))}
+              </Select>
+            </FormControl>
+
+            <FormControl id="categories" mt={4}>
+              <FormLabel>Kategori</FormLabel>
+              <Select defaultValue="semua">
+                {categories.map(cat => (
+                  <option key={cat} value={encodeSlug(cat)}>
+                    {cat}
+                  </option>
+                ))}
+              </Select>
+            </FormControl>
+
+            <FormControl display="flex" alignItems="center" my={4}>
+              <FormLabel htmlFor="verification" mb="0">
+                Terverifikasi
+              </FormLabel>
+              <Switch id="verification" />
+            </FormControl>
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={onClose}>Tutup</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+      <Box p={4} pos="fixed" bottom={0} right={0}>
+        <IconButton aria-label="Filter provinces" size="lg" colorScheme="purple" icon={<HiFilter />} onClick={onOpen} />
+      </Box>
+    </>
   )
 }
 
