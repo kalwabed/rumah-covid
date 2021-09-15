@@ -1,18 +1,7 @@
-import {
-  Box,
-  HStack,
-  Button,
-  Flex,
-  Heading,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Text,
-  VStack,
-  chakra
-} from '@chakra-ui/react'
-import { ArrowRightIcon, SearchIcon } from '@chakra-ui/icons'
+import { Box, HStack, Button, Flex, Heading, Text, VStack, chakra } from '@chakra-ui/react'
+import { ArrowRightIcon } from '@chakra-ui/icons'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import HeroImage from '@components/assets/hero-image.png'
 import Container from '@components/layout/container'
@@ -36,9 +25,13 @@ const Hero = () => {
               </Text>
             </Box>
             <HStack spacing={4}>
-              <Button colorScheme="purple" size="lg" rightIcon={<ArrowRightIcon />}>
-                Telusuri sekarang
-              </Button>
+              <Link href="/provinces">
+                <a>
+                  <Button colorScheme="purple" size="lg" rightIcon={<ArrowRightIcon />}>
+                    Telusuri sekarang
+                  </Button>
+                </a>
+              </Link>
             </HStack>
           </VStack>
         </Flex>

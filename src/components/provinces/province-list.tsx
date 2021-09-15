@@ -4,10 +4,12 @@ import Link from 'next/link'
 
 import Container from '@components/layout/container'
 import { Provinces } from 'src/store'
+import EmptyState from './empty-state'
 
 const ProvinceList = ({ provinces }: { provinces: Provinces[] }) => {
   return (
     <Container mt={10}>
+      {provinces.length === 0 && <EmptyState />}
       <SimpleGrid columns={[2, 3]} gap={[5, 8]}>
         {provinces.map(province => (
           <HStack
