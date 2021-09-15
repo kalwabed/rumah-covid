@@ -46,7 +46,9 @@ const Footer = () => {
                 </HStack>
                 <HStack display="inline-flex" color="gray.500">
                   <Icon as={AiOutlinePhone} boxSize={5} />
-                  <Text>0333-212-2113</Text>
+                  <ChakraLink isExternal href="tel:0333-212-2113">
+                    0333-212-2113
+                  </ChakraLink>
                 </HStack>
                 <HStack spacing={4} color="gray.500">
                   <ChakraLink href="#" _hover={{ color: 'blue.500' }}>

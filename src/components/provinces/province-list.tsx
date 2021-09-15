@@ -1,12 +1,15 @@
 import { Icon, SimpleGrid, Flex, LinkOverlay, Text, HStack, LinkBox } from '@chakra-ui/react'
 import { FiClock } from 'react-icons/fi'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import Container from '@components/layout/container'
 import { Provinces } from 'src/store'
 import EmptyState from './empty-state'
 
 const ProvinceList = ({ provinces }: { provinces: Provinces[] }) => {
+  const { asPath } = useRouter()
+
   return (
     <Container mt={10}>
       {provinces.length === 0 && <EmptyState />}

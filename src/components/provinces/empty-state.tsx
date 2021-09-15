@@ -1,4 +1,4 @@
-import { Box, Icon, Text, VStack, HStack } from '@chakra-ui/react'
+import { Box, Icon, Text, VStack } from '@chakra-ui/react'
 import { HiOutlineInformationCircle } from 'react-icons/hi'
 
 const EmptyState = () => {

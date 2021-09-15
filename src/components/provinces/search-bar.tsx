@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react'
-import { Flex, HStack, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
+import { HStack, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
 
 import Container from '@components/layout/container'
 
@@ -23,12 +23,10 @@ const SearchBar = ({ onChange, search, type }: SearchBarProps) => {
 
   return (
     <Container mt={10}>
-      <Flex align="center" justify="center">
-        <FormControl id="provinces" w={['full', '50%']}>
-          <FormLabel>Pencarian</FormLabel>
-          <Input placeholder="Cari provinsi" value={search} onChange={e => onChange(e)} />
-        </FormControl>
-      </Flex>
+      <FormControl id="provinces" w={['full', '50%']}>
+        <FormLabel>Cari provinsi</FormLabel>
+        <Input placeholder="" value={search} onChange={e => onChange(e)} />
+      </FormControl>
     </Container>
   )
 }
