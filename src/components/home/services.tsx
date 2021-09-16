@@ -1,5 +1,6 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Box, GridItem, Grid, Heading, Icon, Text, VStack, Button, SimpleGrid } from '@chakra-ui/react'
 import { FaRegHospital } from 'react-icons/fa'
 import { FiHome } from 'react-icons/fi'
@@ -14,7 +15,8 @@ const services = [
     image: '/service-rs.svg',
     icon: FaRegHospital,
     iconBg: 'coral',
-    buttonText: 'Telusuri rumah sakit'
+    buttonText: 'Telusuri rumah sakit',
+    href: '/provinces?kebutuhan=rumah%20sakit'
   },
   {
     name: 'Isolasi mandiri',
@@ -22,7 +24,8 @@ const services = [
     image: '/service-isoman.svg',
     icon: FiHome,
     iconBg: 'forestgreen',
-    buttonText: 'Telusuri tempat isoman'
+    buttonText: 'Telusuri tempat isoman',
+    href: '/provinces?kebutuhan=isoman'
   },
   {
     name: 'Kontak Darurat',
@@ -30,7 +33,8 @@ const services = [
     image: '/service-contact.svg',
     icon: IoCallOutline,
     iconBg: 'tomato',
-    buttonText: 'Telusuri kontak darurat'
+    buttonText: 'Telusuri kontak darurat',
+    href: '/kontak-darurat'
   }
 ]
 
@@ -75,16 +79,20 @@ const Services = () => {
                 <Text letterSpacing=".025rem" color="white">
                   {service.description}
                 </Text>
-                <Button
-                  size="lg"
-                  variant="unstyled"
-                  color="blue.400"
-                  alignItems="center"
-                  display="inline-flex"
-                  rightIcon={<ArrowForwardIcon boxSize={5} />}
-                >
-                  {service.buttonText}
-                </Button>
+                <Link href={service.href}>
+                  <a>
+                    <Button
+                      size="lg"
+                      variant="unstyled"
+                      color="blue.400"
+                      alignItems="center"
+                      display="inline-flex"
+                      rightIcon={<ArrowForwardIcon boxSize={5} />}
+                    >
+                      {service.buttonText}
+                    </Button>
+                  </a>
+                </Link>
               </VStack>
             </GridItem>
           </Grid>

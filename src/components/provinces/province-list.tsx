@@ -8,8 +8,6 @@ import { Provinces } from 'src/store'
 import EmptyState from './empty-state'
 
 const ProvinceList = ({ provinces }: { provinces: Provinces[] }) => {
-  const { asPath } = useRouter()
-
   return (
     <Container mt={10}>
       {provinces.length === 0 && <EmptyState />}

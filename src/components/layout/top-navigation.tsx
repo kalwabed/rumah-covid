@@ -3,10 +3,10 @@ import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Box, Button, Flex, HStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useAtom } from 'jotai'
 
 import Logo from './logo'
 import MobileNavigation from './mobile-navigation'
-import { useAtom } from 'jotai'
 import { pathState } from 'src/store'
 
 export const navs = [
@@ -90,9 +90,18 @@ const TopNavigation = () => {
             />
           ))}
         </HStack>
-        <Button zIndex={20} display={['none', null, 'inline-flex']} rightIcon={<ArrowForwardIcon />} colorScheme="gray">
-          Kontak Darurat
-        </Button>
+        <Link href="/kontak-darurat">
+          <a>
+            <Button
+              zIndex={20}
+              display={['none', null, 'inline-flex']}
+              rightIcon={<ArrowForwardIcon />}
+              colorScheme="gray"
+            >
+              Kontak Darurat
+            </Button>
+          </a>
+        </Link>
 
         <MobileNavigation isWhite={!isHeightOffset && !isHomePage} />
       </Flex>
