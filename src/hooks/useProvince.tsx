@@ -9,7 +9,7 @@ const useProvince = () => {
   const [province, setProvince] = useAtom(provinceState)
   const [provinces] = useAtom(provincesState)
 
-  const provinceUrl = asPath.split('/')[2]
+  const provinceUrl = asPath.replace('#', '').split('/')[2]
 
   useEffect(() => {
     const _province = provinces?.find(prov => prov.slug === provinceUrl)

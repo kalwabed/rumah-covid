@@ -13,7 +13,7 @@ const PageBreadcrumb: React.FC<PageBreadCrumpType> = props => {
   const currentPageHref = asPath.split('/')[asPath.split('/').length - 1]
 
   return (
-    <Breadcrumb spacing="8px" separator={<ChevronRightIcon color="gray.500" />}>
+    <Breadcrumb spacing={['4px', '8px']} fontSize={['sm', 'md']} separator={<ChevronRightIcon color="gray.500" />}>
       <BreadcrumbItem>
         <Link href="/" passHref>
           <BreadcrumbLink>
@@ -24,7 +24,7 @@ const PageBreadcrumb: React.FC<PageBreadCrumpType> = props => {
 
       {navs?.map(nav => (
         <BreadcrumbItem key={nav.url}>
-          <Link href={nav.url || ''} passHref>
+          <Link href={nav.url || '#'} passHref>
             <BreadcrumbLink isCurrentPage={!nav.url || nav.url === currentPageHref}>{nav.title}</BreadcrumbLink>
           </Link>
         </BreadcrumbItem>

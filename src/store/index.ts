@@ -22,7 +22,7 @@ export const provincesState = atom<Provinces[]>([
   { name: 'Bengkulu', entry: 543, slug: 'bengkulu' },
   { name: 'Lampung', entry: 543, slug: 'lampung' },
   { name: 'Banten', entry: 543, slug: 'banten' },
-  { name: 'D.I Yogyakarata', entry: 543, slug: 'di-yogyakarta' },
+  { name: 'D.I Yogyakarta', entry: 543, slug: 'di-yogyakarta' },
   { name: 'Nusa Tenggara Timur', entry: 543, slug: 'nusa-tenggara-timur' },
   { name: 'Nusa Tenggara Barat', entry: 432, slug: 'nusa-tenggara-barat' },
   { name: 'Kalimantan Utara', entry: 543, slug: 'kalimantan-utara' },

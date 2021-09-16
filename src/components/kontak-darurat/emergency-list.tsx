@@ -26,7 +26,7 @@ const EmergencyList = () => {
       <HStack justify="space-between" align="center">
         <SimpleGrid columns={2} w="50%" gap={8}>
           {contactList.map(ct => (
-            <ContactCard {...ct} />
+            <ContactCard key={ct.provider} {...ct} />
           ))}
         </SimpleGrid>
         <Box>
