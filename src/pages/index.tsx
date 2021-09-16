@@ -10,10 +10,10 @@ import Telemedicine from '@components/home/telemedicine'
 
 const HomePage: NextPage = () => (
   <>
-    <Box position="absolute" top={[-320, -100]} right={[-300, -180]} zIndex={40}>
+    <Box position="absolute" top={[-320, -100]} right={[-300, -180]} zIndex={0}>
       <Image src="/hero-blob.svg" width={500} height={500} alt="Hero blob" />
     </Box>
-    <Box position="absolute" top={[-320, -100]} left={[-280, -245]} zIndex={40}>
+    <Box position="absolute" top={[-320, -100]} left={[-280, -245]} zIndex={0}>
       <Image src="/logo-blob.svg" width={500} height={500} alt="Hero blob" />
     </Box>
 

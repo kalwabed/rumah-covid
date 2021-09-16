@@ -3,10 +3,9 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import { SimpleGrid, VStack, Text, Box, Heading, Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import { FiHome } from 'react-icons/fi'
 import Link from 'next/link'
-import { useAtom } from 'jotai'
 
 import Container from '@components/layout/container'
-import { provincesState, provinceState } from 'src/store'
+import useProvince from 'src/hooks/useProvince'
 
 const KontakDaruratContent = () => (
   <Box>
@@ -79,8 +78,7 @@ interface JumbotronProps {
 }
 
 const Jumbotron: React.FC<JumbotronProps> = ({ type = 'province' }) => {
-  const [provinces] = useAtom(provincesState)
-  const [province] = useAtom(provinceState)
+  const { province, provinces } = useProvince()
 
   if (type === 'kontak-darurat') {
     return (
@@ -92,18 +90,19 @@ const Jumbotron: React.FC<JumbotronProps> = ({ type = 'province' }) => {
         </Container>
       </Container>
     )
-  } else {
-    const title = useMemo(() => provinces?.find(prov => prov.slug === province)?.name ?? 'Provinsi', [province])
-    return (
-      <Container isFullWidth bgColor="gray.800" bgImage="/topography.svg" color="white" w="full" pb={14} pt={6} px={0}>
-        <Container>
-          <SimpleGrid columns={1} gap={10}>
-            <ProvinceContent province={province} title={title} />
-          </SimpleGrid>
-        </Container>
-      </Container>
-    )
   }
+
+  const title = useMemo(() => provinces?.find(prov => prov.slug === province.url)?.name ?? 'Provinsi', [province])
+
+  return (
+    <Container isFullWidth bgColor="gray.800" bgImage="/topography.svg" color="white" w="full" pb={14} pt={6} px={0}>
+      <Container>
+        <SimpleGrid columns={1} gap={10}>
+          <ProvinceContent province={province} title={title} />
+        </SimpleGrid>
+      </Container>
+    </Container>
+  )
 }
 
 export default Jumbotron

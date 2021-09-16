@@ -5,7 +5,6 @@ import { useAtom } from 'jotai'
 import SearchBar from '@components/provinces/search-bar'
 import Container from '@components/layout/container'
 import { provinceState } from 'src/store'
-import { decodeSlug } from 'src/utils/slug-converter'
 
 const ProvinceHeader = () => {
   const [province] = useAtom(provinceState)
@@ -15,7 +14,7 @@ const ProvinceHeader = () => {
     <Container mt={8}>
       <HStack w="full" spacing={8}>
         <Text fontWeight="bold" fontSize={['sm', 'md']} minW="360px" borderRight={['none', '1px solid #E2E8F0']}>
-          Menemukan 50 rumah sakit di {decodeSlug(province)}
+          Menemukan 50 rumah sakit di {province.title}
         </Text>
         <SearchBar search={search} onChange={e => setSearch(e.target.value)} type="province" />
       </HStack>
