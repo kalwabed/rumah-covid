@@ -25,7 +25,7 @@ const EmergencyList = () => {
   return (
     <Container mt={64}>
       <SectionHeader
-        id="kontak-penting"
+        id="kontak-darurat"
         description="Kumpulan informasi situs dan kontak penting terkait fasilitas serta alat kesehatan untuk COVID-19 di level nasional."
       >
         Kontak Penting Terkait COVID-19

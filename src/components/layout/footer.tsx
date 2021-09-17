@@ -31,7 +31,7 @@ const Footer = () => {
                     <ChakraLink color="gray.500">{nav.label}</ChakraLink>
                   </Link>
                 ))}
-                <Link href="#" passHref>
+                <Link href="/#kontak-darurat" passHref>
                   <ChakraLink color="gray.500">Kontak darurat</ChakraLink>
                 </Link>
               </VStack>

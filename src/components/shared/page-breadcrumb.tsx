@@ -23,7 +23,7 @@ const PageBreadcrumb: React.FC<PageBreadCrumpType> = props => {
       </BreadcrumbItem>
 
       {navs?.map(nav => (
-        <BreadcrumbItem key={nav.url}>
+        <BreadcrumbItem key={nav.title}>
           <Link href={nav.url || '#'} passHref>
             <BreadcrumbLink isCurrentPage={!nav.url || nav.url === currentPageHref}>{nav.title}</BreadcrumbLink>
           </Link>

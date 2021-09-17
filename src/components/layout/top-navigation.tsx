@@ -41,7 +41,7 @@ const TopNavigation = () => {
 
   const isHomePage = useMemo(() => {
     setPath(asPath)
-    return asPath.replace('#kontak-penting', '') === '/'
+    return asPath.replace('#kontak-darurat', '') === '/'
   }, [asPath])
 
   useEffect(() => {
@@ -52,12 +52,15 @@ const TopNavigation = () => {
         setIsHeightOffset(false)
       }
     })
-    return document.removeEventListener('scroll', () => {})
+    return document.removeEventListener('scroll', () => {
+      return null
+    })
   }, [])
 
   return (
     <Box
       w="full"
+      as="header"
       pos="fixed"
       top={0}
       bgColor={isHeightOffset ? 'white' : isHomePage ? 'transparent' : 'gray.800'}
@@ -90,15 +93,9 @@ const TopNavigation = () => {
             />
           ))}
         </HStack>
-        <Link href="/#kontak-penting">
+        <Link href="/#kontak-darurat">
           <a>
-            <Button
-              zIndex={20}
-              display={['none', null, 'inline-flex']}
-              rightIcon={<ArrowForwardIcon />}
-              colorScheme="red"
-              variant="outline"
-            >
+            <Button zIndex={20} display={['none', null, 'inline-flex']} rightIcon={<ArrowForwardIcon />}>
               Kontak Darurat
             </Button>
           </a>
