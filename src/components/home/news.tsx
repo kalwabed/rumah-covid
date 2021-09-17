@@ -41,7 +41,7 @@ const news = [
 
 const News = () => {
   return (
-    <Container mt={64}>
+    <Container mt={[32, 64]}>
       <SectionHeader description="Menambah wawasan melalui artikel yang ditulis oleh para tenaga ahli di lapangan.">
         Berita terkini
       </SectionHeader>

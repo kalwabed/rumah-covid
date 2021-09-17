@@ -23,7 +23,7 @@ const contactList = [
 
 const EmergencyList = () => {
   return (
-    <Container mt={64}>
+    <Container mt={[32, 64]}>
       <SectionHeader
         id="kontak-darurat"
         description="Kumpulan informasi situs dan kontak penting terkait fasilitas serta alat kesehatan untuk COVID-19 di level nasional."

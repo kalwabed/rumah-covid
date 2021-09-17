@@ -6,7 +6,7 @@ import Container from '@components/layout/container'
 
 const Telemedicine = () => {
   return (
-    <Container mt={40}>
+    <Container mt={[20, 40]}>
       <Flex
         pos="relative"
         align="center"

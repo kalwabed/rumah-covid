@@ -30,23 +30,27 @@ const MobileNavigation = ({ isWhite = false }) => {
         icon={<HamburgerIcon />}
         onClick={onOpen}
       />
-      <Drawer size="full" isOpen={isOpen} placement="right" onClose={onClose}>
+      <Drawer size="xl" isOpen={isOpen} placement="top" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Logo />{' '}
+            <Logo />
           </DrawerHeader>
           <DrawerBody>
-            <VStack fontSize="xl" align="start" spacing={8}>
+            <VStack fontSize="xl" align="start" spacing={8} mb={3}>
               {navs.map(nav => (
                 <Link key={nav.href} href={nav.href}>
-                  <a>{nav.label}</a>
+                  <a onClick={onClose}>{nav.label}</a>
                 </Link>
               ))}
-              <Button variant="outline" rightIcon={<ArrowForwardIcon />}>
-                Kontak Darurat
-              </Button>
+              <Link href="/#kontak-darurat">
+                <a>
+                  <Button variant="ghost" onClick={onClose} rightIcon={<ArrowForwardIcon />}>
+                    Kontak Darurat
+                  </Button>
+                </a>
+              </Link>
             </VStack>
           </DrawerBody>
         </DrawerContent>
