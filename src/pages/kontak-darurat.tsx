@@ -1,3 +1,4 @@
+import Telemedicine from '@components/shared/telemedicine'
 import EmergencyList from '@components/kontak-darurat/emergency-list'
 import Page from '@components/layout/page'
 import Jumbotron from '@components/provinces/jumbotron'
@@ -7,6 +8,7 @@ const KontakDarurat = () => {
     <Page>
       <Jumbotron type="kontak-darurat" />
       <EmergencyList />
+      <Telemedicine />
     </Page>
   )
 }

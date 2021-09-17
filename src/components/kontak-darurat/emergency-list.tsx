@@ -24,12 +24,12 @@ const EmergencyList = () => {
   return (
     <Container mt={20}>
       <HStack justify="space-between" align="center">
-        <SimpleGrid columns={2} w="50%" gap={8}>
+        <SimpleGrid columns={2} w={['full', '50%']} gap={[4, 8]}>
           {contactList.map(ct => (
             <ContactCard key={ct.provider} {...ct} />
           ))}
         </SimpleGrid>
-        <Box>
+        <Box display={['none', 'block']}>
           <Image src={EmergencyIllustration} alt="Doctor" placeholder="blur" />
         </Box>
       </HStack>
