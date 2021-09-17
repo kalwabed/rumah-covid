@@ -96,7 +96,8 @@ const TopNavigation = () => {
               zIndex={20}
               display={['none', null, 'inline-flex']}
               rightIcon={<ArrowForwardIcon />}
-              colorScheme="gray"
+              colorScheme="red"
+              variant="outline"
             >
               Kontak Darurat
             </Button>
