@@ -41,7 +41,7 @@ const TopNavigation = () => {
 
   const isHomePage = useMemo(() => {
     setPath(asPath)
-    return asPath === '/'
+    return asPath.replace('#kontak-penting', '') === '/'
   }, [asPath])
 
   useEffect(() => {
@@ -90,7 +90,7 @@ const TopNavigation = () => {
             />
           ))}
         </HStack>
-        <Link href="/kontak-darurat">
+        <Link href="/#kontak-penting">
           <a>
             <Button
               zIndex={20}

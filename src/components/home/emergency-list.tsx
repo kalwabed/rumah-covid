@@ -8,6 +8,7 @@ import BUMN from '@components/assets/logo-bumn.png'
 import Kemenkes from '@components/assets/logo-kemenkes.png'
 import LenteraSvarga from '@components/assets/logo-lentera-svarga.png'
 import InfoOxygen from '@components/assets/logo-oxygen.png'
+import SectionHeader from '@components/home/section-header'
 
 const contactList = [
   { provider: 'SIRANAP V3.0', description: 'Situs Sistem Informasi Rawat Inap', image: Kemenkes },
@@ -22,7 +23,14 @@ const contactList = [
 
 const EmergencyList = () => {
   return (
-    <Container mt={20}>
+    <Container mt={64}>
+      <SectionHeader
+        id="kontak-penting"
+        description="Kumpulan informasi situs dan kontak penting terkait fasilitas serta alat kesehatan untuk COVID-19 di level nasional."
+      >
+        Kontak Penting Terkait COVID-19
+      </SectionHeader>
+
       <HStack justify="space-between" align="center">
         <SimpleGrid columns={2} w={['full', '50%']} gap={[4, 8]}>
           {contactList.map(ct => (
