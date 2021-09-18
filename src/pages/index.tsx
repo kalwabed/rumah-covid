@@ -17,7 +17,7 @@ const HomePage: NextPage = () => (
       <Image src="/logo-blob.svg" width={500} height={500} alt="Hero blob" />
     </Box>
 
-    <Page py={10}>
+    <Page title="Sumber Informasi Faskes untuk Covid-19 | RumahCovid" py={10}>
       <Hero />
       <Services />
       <News />

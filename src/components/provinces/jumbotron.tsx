@@ -66,8 +66,8 @@ const ProvinceContent = ({ title, province }) => (
       </Heading>
       <Text w={['full', '60%']}>
         Informasi seputar kontak fasilitas kesehatan di{' '}
-        {province ? `Provinsi ${title}` : 'seluruh provinsi di Indonesia'} yang dikumpulkan relawan melalui pencarian di
-        internet atau media sosial.
+        {province.title ? `Provinsi ${title}` : 'seluruh provinsi di Indonesia'} yang dikumpulkan relawan melalui
+        pencarian di internet atau media sosial.
       </Text>
     </VStack>
   </Box>

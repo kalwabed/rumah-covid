@@ -27,7 +27,7 @@ const ProvincesPage: NextPage = () => {
   }
 
   return (
-    <Page>
+    <Page title="Informasi seputar kontak fasilitas kesehatan di seluruh provinsi di Indonesia | RumahCovid">
       <Jumbotron />
       <SearchBar search={search} onChange={handleOnChange} />
       <ProvinceList provinces={filteredProvinces} />

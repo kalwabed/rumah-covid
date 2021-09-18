@@ -6,7 +6,7 @@ import Jumbotron from '@components/provinces/jumbotron'
 
 const KontakDaruratPage: NextPage = () => {
   return (
-    <Page>
+    <Page title="Kontak Penting Terkait COVID-19 | RumahCovid">
       <Jumbotron type="kontak-darurat" />
       <EmergencyList />
     </Page>
