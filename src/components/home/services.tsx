@@ -7,12 +7,15 @@ import { FiHome } from 'react-icons/fi'
 import { IoCallOutline } from 'react-icons/io5'
 
 import Container from '@components/layout/container'
+import ServiceRs from '@components/assets/service-rs.png'
+import ServiceIsoman from '@components/assets/service-isoman.png'
+import ServiceContact from '@components/assets/service-contact.png'
 
 const services = [
   {
     name: 'Rumah sakit',
     description: 'Memprioritaskan faskes dengan standar nasional, dan didukung dengan teknologi terkini.',
-    image: '/service-rs.svg',
+    image: ServiceRs,
     icon: FaRegHospital,
     iconBg: 'coral',
     buttonText: 'Telusuri rumah sakit',
@@ -21,7 +24,7 @@ const services = [
   {
     name: 'Isolasi mandiri',
     description: 'Daftar tempat-tempat yang mendukung isolasi mandiri dibawah pengawasan dinas kesehatan.',
-    image: '/service-isoman.svg',
+    image: ServiceIsoman,
     icon: FiHome,
     iconBg: 'forestgreen',
     buttonText: 'Telusuri tempat isoman',
@@ -30,7 +33,7 @@ const services = [
   {
     name: 'Kontak Darurat',
     description: 'Situs dan kontak penting terkait penanganan dan pencegahan COVID-19.',
-    image: '/service-contact.svg',
+    image: ServiceContact,
     icon: IoCallOutline,
     iconBg: 'tomato',
     buttonText: 'Telusuri kontak darurat',
@@ -63,7 +66,7 @@ const Services = () => {
             py={8}
           >
             <GridItem colSpan={1} display={['none', 'grid']}>
-              <Image src={service.image} alt={service.name} width={600} height={400} />
+              <Image src={service.image} alt={service.name} placeholder="blur" width={600} height={400} />
             </GridItem>
 
             <GridItem colSpan={1} justifySelf="center" w={['90%', '50%']}>
