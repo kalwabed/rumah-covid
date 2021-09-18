@@ -7,7 +7,6 @@ import Page from '@components/layout/page'
 import Services from '@components/home/services'
 import News from '@components/home/news'
 import Telemedicine from '@components/shared/telemedicine'
-import EmergencyList from '@components/home/emergency-list'
 
 const HomePage: NextPage = () => (
   <>
@@ -22,7 +21,6 @@ const HomePage: NextPage = () => (
       <Hero />
       <Services />
       <News />
-      <EmergencyList />
       <Telemedicine />
     </Page>
   </>

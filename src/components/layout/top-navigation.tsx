@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Box, Button, Flex, HStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -21,6 +20,10 @@ export const navs = [
   {
     href: '/provinces?kebutuhan=isoman',
     label: 'Isoman'
+  },
+  {
+    href: '/kontak-darurat',
+    label: 'Kontak darurat'
   }
 ]
 
@@ -93,13 +96,6 @@ const TopNavigation = () => {
             />
           ))}
         </HStack>
-        <Link href="/#kontak-darurat">
-          <a>
-            <Button zIndex={20} display={['none', null, 'inline-flex']} rightIcon={<ArrowForwardIcon />}>
-              Kontak Darurat
-            </Button>
-          </a>
-        </Link>
 
         <MobileNavigation isWhite={!isHeightOffset && !isHomePage} />
       </Flex>

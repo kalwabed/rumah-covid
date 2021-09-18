@@ -1,4 +1,4 @@
-import { ArrowForwardIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import {
   Button,
   Drawer,
@@ -38,19 +38,12 @@ const MobileNavigation = ({ isWhite = false }) => {
             <Logo />
           </DrawerHeader>
           <DrawerBody>
-            <VStack fontSize="xl" align="start" spacing={8} mb={3}>
+            <VStack fontSize="mlg" align="start" spacing={8} mb={4}>
               {navs.map(nav => (
                 <Link key={nav.href} href={nav.href}>
                   <a onClick={onClose}>{nav.label}</a>
                 </Link>
               ))}
-              <Link href="/#kontak-darurat">
-                <a>
-                  <Button variant="ghost" onClick={onClose} rightIcon={<ArrowForwardIcon />}>
-                    Kontak Darurat
-                  </Button>
-                </a>
-              </Link>
             </VStack>
           </DrawerBody>
         </DrawerContent>
