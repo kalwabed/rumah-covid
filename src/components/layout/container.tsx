@@ -4,12 +4,12 @@ interface PageContentProps extends BoxProps {
   isFullWidth?: boolean
 }
 
-const Container: React.FC<PageContentProps> = props => {
+const Container: React.FC<PageContentProps> = ({ isFullWidth, ...props }) => {
   return (
     <Box
       pos="relative"
       as="section"
-      maxW={props.isFullWidth ? 'full' : { sm: 'full', xl: '6xl', '2xl': '8xl' }}
+      maxW={isFullWidth ? 'full' : { sm: 'full', xl: '6xl', '2xl': '8xl' }}
       px={4}
       mx="auto"
       w="full"
