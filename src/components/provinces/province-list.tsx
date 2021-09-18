@@ -43,20 +43,10 @@ const ProvinceList = ({ provinces }: { provinces: Provinces[] }) => {
               <Flex flexDir="column">
                 <HStack align="center" mb={[0, 2]}>
                   <Link href={`/provinces/${province.slug}`} passHref>
-                    <LinkOverlay
-                      borderRight={['none', '1px solid gray']}
-                      pr={3}
-                      py={0}
-                      fontWeight="bold"
-                      fontSize={['md', 'lg']}
-                    >
+                    <LinkOverlay pr={3} py={0} fontWeight="bold" fontSize={['md', 'lg']}>
                       {province.name}
                     </LinkOverlay>
                   </Link>
-
-                  <Text color="gray.600" display={['none', 'block']}>
-                    {province.entry} Entri
-                  </Text>
                 </HStack>
                 <Text fontSize="sm" display={['block', 'none']} my={1} color="gray.600">
                   {province.entry} Entri

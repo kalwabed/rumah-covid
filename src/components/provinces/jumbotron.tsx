@@ -52,7 +52,7 @@ const ProvinceContent = ({ title, province }) => (
           <BreadcrumbLink isCurrentPage={!province}>Provinsi</BreadcrumbLink>
         </Link>
       </BreadcrumbItem>
-      {province && (
+      {province.url && (
         <BreadcrumbItem>
           <Link href={`/provinces/${province}`} passHref>
             <BreadcrumbLink isCurrentPage>{title}</BreadcrumbLink>
