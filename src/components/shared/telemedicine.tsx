@@ -1,7 +1,5 @@
-import { Box, Flex, Heading, VStack, Text, Button } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Image, Flex, Heading, VStack, Text, Button } from '@chakra-ui/react'
 
-import TeleImg from '@components/assets/telemedicine.png'
 import Container from '@components/layout/container'
 
 const Telemedicine = () => {
@@ -19,7 +17,7 @@ const Telemedicine = () => {
         shadow="sm"
       >
         <Box pos="absolute" display={['none', 'block']} bottom={-1.5} left={0}>
-          <Image src={TeleImg} width={220} height={300} alt="Telemedicine illustration" placeholder="blur" />
+          <Image src="/assets/telemedicine.png" width={220} height={300} alt="Telemedicine illustration" />
         </Box>
         <VStack w={['full', '50%']} align="start" mx="auto" color="white" spacing={5}>
           <Heading as="h3" fontSize={['4xl', '5xl']}>

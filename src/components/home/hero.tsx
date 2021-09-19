@@ -1,9 +1,7 @@
-import { Box, HStack, Button, Flex, Heading, Text, VStack, chakra } from '@chakra-ui/react'
+import { Box, HStack, Button, Flex, Heading, Text, VStack, chakra, Image } from '@chakra-ui/react'
 import { ArrowRightIcon } from '@chakra-ui/icons'
-import Image from 'next/image'
 import Link from 'next/link'
 
-import HeroImage from '@components/assets/hero-image.png'
 import Container from '@components/layout/container'
 
 const Hero = () => {
@@ -36,7 +34,7 @@ const Hero = () => {
           </VStack>
         </Flex>
         <Box zIndex={20} display={['none', null, 'inline-block']}>
-          <Image src={HeroImage} alt="Hero image" placeholder="blur" />
+          <Image src="/assets/hero-image.png" alt="Hero image" htmlHeight={580} htmlWidth={580} />
         </Box>
       </Flex>
     </Container>

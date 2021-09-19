@@ -10,7 +10,14 @@ const NewsCard: React.FC<NewsCardProps> = ({ news, index }) => {
   const { authorName, date, description, title } = news
 
   return (
-    <LinkBox key={title} bgImage={`url('/news-${index + 1}-bg.jpg')`} bgPos="top" p={[4, 8]} rounded="md" shadow="md">
+    <LinkBox
+      key={title}
+      bgImage={`url('/assets/news-${index + 1}-bg.jpg')`}
+      bgPos="top"
+      p={[4, 8]}
+      rounded="md"
+      shadow="md"
+    >
       <VStack
         align="start"
         flexDir="column"

@@ -82,7 +82,16 @@ const Jumbotron: React.FC<JumbotronProps> = ({ type = 'province' }) => {
 
   if (type === 'kontak-darurat') {
     return (
-      <Container isFullWidth bgColor="gray.800" bgImage="/topography.svg" color="white" w="full" pb={14} pt={6} px={0}>
+      <Container
+        isFullWidth
+        bgColor="gray.800"
+        bgImage="/assets/topography.svg"
+        color="white"
+        w="full"
+        pb={14}
+        pt={6}
+        px={0}
+      >
         <Container>
           <SimpleGrid columns={1} gap={10}>
             <KontakDaruratContent />
@@ -95,7 +104,16 @@ const Jumbotron: React.FC<JumbotronProps> = ({ type = 'province' }) => {
   const title = useMemo(() => provinces?.find(prov => prov.slug === province.url)?.name ?? 'Provinsi', [province])
 
   return (
-    <Container isFullWidth bgColor="gray.800" bgImage="/topography.svg" color="white" w="full" pb={14} pt={6} px={0}>
+    <Container
+      isFullWidth
+      bgColor="gray.800"
+      bgImage="/assets/topography.svg"
+      color="white"
+      w="full"
+      pb={14}
+      pt={6}
+      px={0}
+    >
       <Container>
         <SimpleGrid columns={1} gap={10}>
           <ProvinceContent province={province} title={title} />

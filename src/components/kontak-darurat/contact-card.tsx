@@ -1,10 +1,9 @@
-import { Box, Flex, Button, Text } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Image, Flex, Button, Text } from '@chakra-ui/react'
 
 interface ContactCardProps {
   provider: string
   description: string
-  image: StaticImageData
+  image: string
 }
 
 const ContactCard = (props: ContactCardProps) => {
@@ -21,7 +20,7 @@ const ContactCard = (props: ContactCardProps) => {
       fontSize={['sm', 'md']}
     >
       <Flex p={4} justify="center">
-        <Image src={image} alt={provider} placeholder="blur" width={300} height={150} objectFit="scale-down" />
+        <Image src={image} alt={provider} width={300} height={150} fit="scale-down" />
       </Flex>
       <Box flex="1 1 0%" p={4} h={0}>
         <Text mb={2} color="gray.500">

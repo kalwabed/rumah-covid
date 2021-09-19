@@ -41,7 +41,7 @@ const News = () => {
           <NewsCard key={news.title} index={i} news={news} />
         ))}
 
-        <Box bgImage="url('/news-4-bg.jpg')" bgPos="top" p={[4, 8]} rounded="md" shadow="md">
+        <Box bgImage="url('/assets/news-4-bg.jpg')" bgPos="top" p={[4, 8]} rounded="md" shadow="md">
           <VStack
             align="center"
             flexDir="column"
