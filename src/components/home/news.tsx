@@ -1,19 +1,9 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import {
-  Avatar,
-  Box,
-  HStack,
-  SimpleGrid,
-  Text,
-  VStack,
-  Link as ChakraLink,
-  LinkBox,
-  LinkOverlay
-} from '@chakra-ui/react'
-import Link from 'next/link'
+import { Box, SimpleGrid, VStack, Link as ChakraLink } from '@chakra-ui/react'
 
 import Container from '@components/layout/container'
 import SectionHeader from './section-header'
+import NewsCard from './news-card'
 
 const news = [
   {
@@ -43,55 +33,15 @@ const News = () => {
   return (
     <Container mt={[32, 64]}>
       <SectionHeader description="Menambah wawasan melalui artikel yang ditulis oleh para tenaga ahli di lapangan.">
-        Berita terkini
+        Berita terkini.
       </SectionHeader>
 
       <SimpleGrid columns={[1, 1, 2]} gap={10}>
         {news.map((news, i) => (
-          <LinkBox
-            key={news.title}
-            bgImage={`url('/news-${i + 1}-bg.jpg')`}
-            bgPos="top"
-            p={[4, 8]}
-            rounded="md"
-            shadow="md"
-          >
-            <VStack
-              align="start"
-              flexDir="column"
-              w="full"
-              h="full"
-              p={8}
-              spacing={4}
-              bgColor="gray.900"
-              color="white"
-              rounded="md"
-              shadow="lg"
-            >
-              <HStack align="center" justify="start">
-                <Avatar
-                  size="sm"
-                  name={news.authorName}
-                  src={`https://randomuser.me/api/portraits/men/${i + 18}.jpg`}
-                />
-                <Text fontWeight="medium" fontSize={['sm', 'md']}>
-                  {news.authorName}
-                </Text>
-              </HStack>
-              <Link href="/news" passHref>
-                <LinkOverlay fontSize="2xl" fontWeight="bold">
-                  {news.title}
-                </LinkOverlay>
-              </Link>
-              <Text fontSize="sm">{news.description}</Text>
-              <Text fontSize="sm" color="gray.500">
-                {news.date}
-              </Text>
-            </VStack>
-          </LinkBox>
+          <NewsCard key={news.title} index={i} news={news} />
         ))}
 
-        <Box bgImage="url('/news-4-bg.jpg')" bgPos="top" p={8} rounded="md" shadow="md">
+        <Box bgImage="url('/news-4-bg.jpg')" bgPos="top" p={[4, 8]} rounded="md" shadow="md">
           <VStack
             align="center"
             flexDir="column"
@@ -105,7 +55,7 @@ const News = () => {
             rounded="md"
             shadow="lg"
           >
-            <ChakraLink href="#" fontSize={['3xl', '4xl']} fontWeight="bold">
+            <ChakraLink href="#" fontSize={['2xl', '4xl']} fontWeight="bold">
               Berita lainnya <ArrowForwardIcon />{' '}
             </ChakraLink>
           </VStack>

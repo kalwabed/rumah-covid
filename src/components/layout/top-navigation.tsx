@@ -44,7 +44,7 @@ const TopNavigation = () => {
 
   const isHomePage = useMemo(() => {
     setPath(asPath)
-    return asPath.replace('#kontak-darurat', '') === '/'
+    return asPath.replace('#', '') === '/'
   }, [asPath])
 
   useEffect(() => {

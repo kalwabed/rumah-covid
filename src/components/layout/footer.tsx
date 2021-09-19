@@ -10,8 +10,8 @@ const Footer = () => {
   return (
     <Box as="footer" pos="relative" w="full" mt={40} py={20} borderTop="1px solid" borderColor="gray.100">
       <Box maxW={{ sm: 'full', xl: '6xl', '2xl': '8xl' }} w="full" mx="auto" px={4}>
-        <Grid templateRows={['repeat(2,1fr)', 'none']} templateColumns={['none', 'repeat(3,1fr)']} rowGap={10}>
-          <GridItem colSpan={2}>
+        <Grid templateRows={['repeat(1,1fr)', 'none']} templateColumns={['none', 'repeat(3,1fr)']} rowGap={10}>
+          <GridItem colSpan={2} rowSpan={1}>
             <Flex flexDir="column" align="start">
               <Logo />
               <Text color="gray.500" mt={1} mb={4}>
@@ -22,8 +22,8 @@ const Footer = () => {
             </Flex>
           </GridItem>
 
-          <GridItem colSpan={1}>
-            <SimpleGrid columns={[2]} align="start">
+          <GridItem colSpan={1} rowSpan={1}>
+            <SimpleGrid columns={[1, 2]} align="start" gap={[5, 0]}>
               <VStack align="start" w="full">
                 <Text fontWeight="semibold">Navigasi</Text>
                 {navs.map(nav => (
@@ -31,9 +31,6 @@ const Footer = () => {
                     <ChakraLink color="gray.500">{nav.label}</ChakraLink>
                   </Link>
                 ))}
-                <Link href="/#kontak-darurat" passHref>
-                  <ChakraLink color="gray.500">Kontak darurat</ChakraLink>
-                </Link>
               </VStack>
 
               <VStack align="start">
